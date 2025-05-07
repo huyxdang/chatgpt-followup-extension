@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "ChatGPT Follow-Up Sidebar",
+    "version": "1.0",
+    "description": "A floating assistant to ask follow-up questions to ChatGPT without cluttering the main thread.",
+    "permissions": ["storage", "activeTab", "scripting"],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://chat.openai.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
